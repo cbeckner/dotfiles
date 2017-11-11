@@ -1,0 +1,33 @@
+GIT_AUTHOR_NAME="Cody Beckner"
+GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
+git config --global user.name "$GIT_AUTHOR_NAME"
+GIT_AUTHOR_EMAIL="cody.beckner@gmail.com"
+GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
+git config --global user.email "$GIT_AUTHOR_EMAIL"
+
+export NVM_DIR=~/.nvm
+source ~/.nvm/nvm.sh
+
+function _update_ps1() {
+    PS1="$(~/powerline-shell.py $? 2> /dev/null)"
+}
+
+if [ "$TERM" != "linux" ]; then
+    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+fi
+
+alias bitios="cd ~/projects/bicopd/bi-therapeutic-ios"
+alias bitan="cd ~/projects/bicopd/bicopd-therapeutic-caregiver-app-android"
+alias bitetx="cd ~/projects/bicopd/bicopd-therapeutic-etx"
+alias bidios="cd ~/projects/bicopd/bicopd-diagnostic-app-ios"
+alias bidan="cd ~/projects/bicopd/bicopd-diagnostic-app-android"
+alias ngrok="~/projects/tools/ngrok"
+alias aaaan="cd ~/projects/nestle-aaa/aaa-ehealth"
+alias aaal="cd ~/projects/nestle-aaa/aaa-ehealth-landing"
+alias aaacl="cd ~/projects/nestle-aaa/aaa-ehealth-custom-logic"
+alias aaaios="cd ~/projects/nestle-aaa/aaa-ehealth-ios"
+
+alias vpn="scutil --nc start 'MHQ VPN' --user cbeckner"
+alias stopvpn="scutil --nc stop 'MHQ VPN'"
+
+alias proxy="~/projects/proxy.sh"
